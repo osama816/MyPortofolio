@@ -1,0 +1,121 @@
+/* Import Tailwind CSS styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Custom styles */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  @apply px-3 py-2 bg-gradient-to-bl border-[2px] border-transparent from-sky-500 to-blue-600 text-[15px] text-white rounded hover:from-transparent hover:to-transparent transition-colors transition-opacity hover:border-sky-400 hover:text-slate-800 dark:from-gray-700 dark:to-gray-900 dark:hover:border-gray-600 dark:hover:text-white;
+}
+
+.btn-outline {
+  @apply px-3 py-2 border-[2px] border-slate-500 text-[15px] text-slate-800 rounded  dark:text-white dark:border-gray-300 hover:text-slate-900 hover:shadow;
+}
+.btn-auto {
+  @apply ease-in w-[35px] h-[35px] flex items-center justify-center rounded hover:ring-[5px] hover:ring-slate-200 text-[15px] border border-gray-700 bg-transparent dark:bg-transparent dark:text-white dark:border-slate-200 sm:hidden
+}
+.headingText {
+  @apply text-[40px] font-medium bg-clip-text text-transparent bg-gradient-to-br from-sky-600 to-green-600 dark:from-gray-100 dark:to-gray-600
+}
+
+
+
+.maxWidth {
+  @apply max-w-[1500px] mx-auto overflow-hidden
+}
+
+.textGradient {
+  @apply text-[25px] font-medium bg-clip-text text-transparent bg-gradient-to-tr from-sky-600 to-slate-800 dark:from-gray-200 dark:to-gray-600;
+}
+
+.hero {
+  @apply h-full md:min-h-[90vh];
+}
+.easeIn {
+  animation: easein 0.4s ease-in-out infinite;
+}
+.social-btn {
+  @apply text-white rounded-sm w-[40px] h-[40px]  flex justify-center items-center;
+}
+
+.card {
+  @apply px-3 py-2 border flex flex-col justify-center shadow-sm rounded-md border-slate-300 gap-4 items-center;
+  box-shadow: 8px 8px #002236;
+}
+.ssdow {
+  box-shadow: 8px 8px #002236;
+}
+.project {
+  @apply bg-white border rounded-md flex flex-col md:flex-row justify-start relative dark:bg-transparent hover:scale-105 transition;
+  box-shadow: 8px 8px #002236;
+}
+
+.borderN {
+  box-shadow: 8px 8px #002236;
+}
+.cardImage {
+  @apply w-[80px] h-[80px] my-4;
+}
+
+.icon {
+  @apply mr-1;
+}
+.tags {
+  @apply px-[6px] py-[2px] text-[14px] rounded  cursor-pointer;
+}
+
+@keyframes easein {
+  0% {
+    top: 0px;
+  }
+  25% {
+    top: 2px;
+  }
+  50% {
+    top: 4px;
+  }
+
+  100% {
+    top: 2px;
+  }
+}
+
+/* Dark mode for buttons and inputs */
+.btn,
+.btn-outline {
+  /* ...existing code... */
+}
+
+input,
+textarea,
+select {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
