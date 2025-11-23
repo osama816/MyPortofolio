@@ -15,6 +15,14 @@ function Projects() {
       githubLink: "https://github.com/osama816/Courses_laravel.git",
     },
     { 
+      title: " Blog_laravel ",
+      imageUrl: blogImage,
+      category: "backend",
+      tags: ["Laravel", "Livewire", "taliwind","HTML", "css", "Api", "MySQL"],
+      previewLink: "",
+      githubLink: "https://github.com/osama816/Blog_Laravel.git",
+    },
+    { 
       title: "BLOg App&php native ",
       imageUrl: blogImage,
       category: "fullstack",
