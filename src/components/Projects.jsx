@@ -3,6 +3,7 @@ import pmsImage from "../assets/pms.png";
 import blogImage from "../assets/blog.png";
 import ecommersImage from "../assets/ecommers.png";
 import rentsImage from "../assets/rants.png";
+import courses from "../assets/courses.png";
 
 function Projects() {
   const projects = [
