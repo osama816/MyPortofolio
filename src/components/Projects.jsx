@@ -4,7 +4,7 @@ import blogImage from "../assets/blog.png";
 import ecommersImage from "../assets/ecommers.png";
 import rentsImage from "../assets/rants.png";
 import courses from "../assets/courses.png";
-import blog_laravel from "../assets/Bloglaravel.png";
+import blog_laravel from "../assets/blog_laravel.png";
 
 function Projects() {
   const projects = [
