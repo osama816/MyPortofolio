@@ -7,6 +7,14 @@ import rentsImage from "../assets/rants.png";
 function Projects() {
   const projects = [
     { 
+      title: "Booking Courses ",
+      imageUrl: courses,
+      category: "fullstack",
+      tags: ["Laravel", "Livewire", "Payment","real time","HTML", "css", "Api","bootstrap", "MySQL"],
+      previewLink: "",
+      githubLink: "https://github.com/osama816/Courses_laravel.git",
+    },
+    { 
       title: "BLOg App&php native ",
       imageUrl: blogImage,
       category: "fullstack",
