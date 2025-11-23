@@ -4,6 +4,7 @@ import blogImage from "../assets/blog.png";
 import ecommersImage from "../assets/ecommers.png";
 import rentsImage from "../assets/rants.png";
 import courses from "../assets/courses.png";
+import blog_laravel from "../assets/Bloglaravel.png";
 
 function Projects() {
   const projects = [
@@ -17,7 +18,7 @@ function Projects() {
     },
     { 
       title: " Blog_laravel ",
-      imageUrl: blogImage,
+      imageUrl: blog_laravel,
       category: "backend",
       tags: ["Laravel", "Livewire", "taliwind","HTML", "css", "Api", "MySQL"],
       previewLink: "",

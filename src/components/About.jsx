@@ -56,10 +56,10 @@ function About() {
         </span> */}
 
         <div className="flex-center mt-5 mx-auto !gap-3">
-          <button className="btn mr-3" onClick={() => navigate("/projects")}>
+          <button className="btn mr-3" onClick={() => navigate("#projects")}>
             MY PROJECTS
           </button>
-          <button className="btn-outline " onClick={() => navigate("/contact")}>
+          <button className="btn-outline " onClick={() => navigate("#contact")}>
             Contact Me
           </button>
         </div>
