@@ -56,12 +56,26 @@ function About() {
         </span> */}
 
         <div className="flex-center mt-5 mx-auto !gap-3">
-          <button className="btn mr-3" onClick={() => navigate("#projects")}>
-            MY PROJECTS
-          </button>
-          <button className="btn-outline " onClick={() => navigate("#contact")}>
+              <a
+                onClick={() => setNav(false)}
+                href="#projects"
+                className="px-2 py-[6px] text-xl text-left hover:text-slate-700 dark:text-gray-200 font-medium dark:hover:text-slate-300"
+              >
+                Projects
+              </a>
+          {/* <button className="btn-outline " onClick={() => navigate("#contact")}>
             Contact Me
+          </button> */}
+                  <div className="flex gap-2 sm:gap-3 items-center">
+          <a href="#contact">
+            <button className="btn !py-[6px]">Contact Me</button>
+          </a>
+
+          <DarkModeToggle />
+          <button onClick={() => setNav(true)} className="btn-auto">
+            <i className="mx-auto fa-solid fa-bars-staggered"></i>
           </button>
+        </div>
         </div>
       </div>
 

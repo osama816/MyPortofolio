@@ -69,7 +69,7 @@ function Skills() {
     // },
 
     {
-      imageUrl: "../assets/livewire.png",
+      imageUrl: "https://logo.svgcdn.com/devicon/livewire-original-wordmark.png",
       title: "Livewire",
       category: "web",
     },
