@@ -68,12 +68,11 @@ function Skills() {
     //   category: "tools",
     // },
 
-    // {
-    //   imageUrl:
-    //     "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
-    //   title: "Notion",
-    //   category: "tools",
-    // },
+    {
+      imageUrl: "../assets/livewire.png",
+      title: "Livewire",
+      category: "web",
+    },
   ];
 
   const [filter, setFilter] = useState("all");
