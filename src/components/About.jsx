@@ -59,19 +59,9 @@ function About() {
           <button className="btn mr-3" onClick={() => navigate("#projects")}>
             MY PROJECTS
           </button>
-          {/* <button className="btn-outline " onClick={() => navigate("#contact")}>
+          <button className="btn-outline " onClick={() => navigate("#contact")}>
             Contact Me
-          </button> */}
-                  <div className="flex gap-2 sm:gap-3 items-center">
-          <a href="#contact">
-            <button className="btn !py-[6px]">Contact Me</button>
-          </a>
-
-          <DarkModeToggle />
-          <button onClick={() => setNav(true)} className="btn-auto">
-            <i className="mx-auto fa-solid fa-bars-staggered"></i>
           </button>
-        </div>
         </div>
       </div>
 

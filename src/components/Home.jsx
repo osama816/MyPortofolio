@@ -71,13 +71,13 @@ function Home() {
         </div>
 
         <div className="flex gap-4 mt-4 mx-auto md:mx-0">
-          {/* <button
+          <button
             onClick={() => navigate("#contact")}
             className="btn w-[140px] flex flex-row justify-center items-center gap-2 disabled"
           >
             <FaToolbox /> <p>Contact Me</p>
-          </button> */}
-          <div className="flex gap-2 sm:gap-3 items-center">
+          </button>
+          {/* <div className="flex gap-2 sm:gap-3 items-center">
             <a href="#contact">
               <button className="btn !py-[6px]">Contact Me</button>
             </a>
@@ -86,7 +86,7 @@ function Home() {
             <button onClick={() => setNav(true)} className="btn-auto">
               <i className="mx-auto fa-solid fa-bars-staggered"></i>
             </button>
-          </div>
+          </div> */}
           <button
             className="btn-outline w-[140px] disabled"
             onClick={() => {
