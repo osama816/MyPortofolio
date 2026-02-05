@@ -24,26 +24,21 @@ function About() {
           </span>
         </h1>
         <p className="text-[17px] text-slate-800 dark:text-gray-200 mt-1">
-          A passionate Laravel developer based in Eygpt. With a strong
-          foundation in web development, I specialize in creating robust and
-          scalable applications using the Laravel framework.
+          I am a Full Stack Developer based in Egypt with a passion for building robust and scalable web applications. With a strong engineering background, I specialize in creating comprehensive solutions from backend architecture to frontend delivery.
         </p>
         <span className="text-[22px] font-medium textGradient mt-3">
           What I Do
         </span>
         <p className="text-[17px] text-slate-800 dark:text-gray-200 mt-1">
-          I love turning ideas into reality through code. My expertise lies in
-          crafting elegant solutions with Laravel, or custom web applications.
+          I enjoy transforming complex requirements into seamless digital experiences. My core expertise lies in developing powerful backends using <b>Laravel</b> and <b>.NET</b>, while building dynamic, interactive user interfaces with <b>Angular</b>.
         </p>
 
         <span className="text-[22px] font-medium textGradient mt-3">
           Why Choose Me?
         </span>
         <p className="text-[17px] text-slate-800 dark:text-gray-200 mt-1">
-          <b>Laravel Enthusiast:</b> I have a deep appreciation for the
-          simplicity and power that Laravel brings to web development. <br />
-          <b>Collaborative Team Player:</b> I thrive in collaborative
-          environments and value teamwork to deliver high-quality results.
+          <b>Full Stack Proficiency:</b> I bridge the gap between frontend and backend, ensuring high performance, security, and a great user experience across the entire stack. <br />
+          <b>Versatile & Adaptable:</b> Whether it's the elegance of Laravel, the power of .NET, or the dynamic nature of Angular, I adapt to the best tools for the job to deliver high-quality results.
         </p>
 
         {/* <span className="px-2 py-[6px] text-[14px] rounded-sm mt-3 text-blue-900 bg-blue-100 border border-sky-400">

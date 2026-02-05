@@ -5,6 +5,8 @@ import ecommersImage from "../assets/ecommers.png";
 import rentsImage from "../assets/rants.png";
 import courses from "../assets/courses.png";
 import blog_laravel from "../assets/blog_laravel.png";
+import frontend_E_commerce from "../assets/frontend_E-commerce.png";
+
 
 function Projects() {
   const projects = [
@@ -24,14 +26,7 @@ function Projects() {
       previewLink: "",
       githubLink: "https://github.com/osama816/Blog_Laravel.git",
     },
-    { 
-      title: "BLOg App&php native ",
-      imageUrl: blogImage,
-      category: "fullstack",
-      tags: ["HTML", "css", "php","bootstrap", "MySQL"],
-      previewLink: "https://blog0.wuaze.com",
-      githubLink: "https://github.com/osama816/blog_app.git",
-    },
+    
     {
       title: "blog & ecommerce website",
       imageUrl:ecommersImage,
@@ -39,6 +34,21 @@ function Projects() {
       tags: ["HTML", "opp",'php', "css", "bootstrap", "MySQL"],
       previewLink: "https://electroworld.kesug.com/index.php?page=home&i=1",
       githubLink: "https://github.com/elkhokh/E-Commerce-Electronics.git",
+    },
+        {
+      title: "frontend_E-commerce",
+      imageUrl:frontend_E_commerce,
+      category: "frontend",
+      tags: ["HTML5", "Tailwind", "JavaScript", "pdf.js", "css"],
+      previewLink: "https://shopco-shop.vercel.app",
+      githubLink: "https://github.com/osama816/ecommerse_frontend.git",
+    },{ 
+      title: "BLOg App&php native ",
+      imageUrl: blogImage,
+      category: "fullstack",
+      tags: ["HTML", "css", "php","bootstrap", "MySQL"],
+      previewLink: "https://blog0.wuaze.com",
+      githubLink: "https://github.com/osama816/blog_app.git",
     },
         {
       title: "Shop stor- php native ",
@@ -56,6 +66,7 @@ function Projects() {
       previewLink: "https://elabd-rentals.wuaze.com/?i=1",
       githubLink: "https://github.com/osama816/eladb-rentals.git",
     },
+
    
   ];
 

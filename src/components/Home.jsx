@@ -27,11 +27,12 @@ function Home() {
           <span className="headingText">I&apos;m Osama Elgendy</span>
         </h1>
         <p className="text-[18px] text-slate-800 mt-3 dark:text-white">
-          A passionate web developer specializing in Laravel
+          I Am software engineer
         </p>
         <p className="text-[18px] text-slate-800 mt-3 dark:text-white">
-          I&apos;m passionate about crafting elegant and efficient solutions for
-          web development projects.
+          I&apos;m a passionate software engineer with a strong background in
+          web development and a keen interest in creating innovative and
+          user-friendly solutions.
         </p>
 
         <div className="flex justify-center md:justify-start items-center gap-4 mt-4">

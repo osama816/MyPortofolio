@@ -61,13 +61,18 @@ function Skills() {
       category: "web",
     },
 
-    // {
-    //   imageUrl:
-    //     "https://cdn3d.iconscout.com/3d/free/thumb/free-canva-9234654-7516879.png?f=webp",
-    //   title: "Canva",
-    //   category: "tools",
-    // },
-
+    {
+      imageUrl:
+        "https://img.icons8.com/?size=256&id=1BC75jFEBED6&format=png",
+      title: ".Net",
+      category: "web",
+    },
+    {
+      imageUrl:
+        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*UBZYjKJigowCJOK4SaHicw.jpeg",
+      title: "Figma",
+      category: "web",
+    },
     {
       imageUrl: "https://logo.svgcdn.com/devicon/livewire-original-wordmark.png",
       title: "Livewire",
