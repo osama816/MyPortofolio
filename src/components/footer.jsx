@@ -1,73 +1,108 @@
 import React from "react";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    { title: "Home", href: "#home" },
+    { title: "About", href: "#about" },
+    { title: "Skills", href: "#skills" },
+    { title: "Projects", href: "#projects" },
+    { title: "Contact", href: "#contact" },
+  ];
+
+  const socialLinks = [
+    { icon: "fa-brands fa-facebook-f", url: "https://www.facebook.com/share/1A3jrR5dwM/", color: "#1877F2" },
+    { icon: "fa-brands fa-linkedin-in", url: "https://www.linkedin.com/in/osama-elgendy-416329331/", color: "#0A66C2" },
+    { icon: "fa-brands fa-whatsapp", url: "https://wa.me/201202665670", color: "#25D366" },
+    { icon: "fa-brands fa-github", url: "https://github.com/osama816", color: "#333" },
+  ];
+
   return (
-  <footer className="bg-white text-slate-900 dark:bg-black dark:text-white py-8 mt-10 shadow-inner">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo & Description */}
-        <div>
-          <h2 className="text-xl font-bold mb-2 dark:text-white">MyPortfolio</h2>
-          <p className="text-sm text-slate-600 dark:text-slate-300">
-            A personal website to showcase my work, skills, and connect with others.
-          </p>
-        </div>
-        {/* Quick Links */}
-        <div>
-          <h3 className="font-semibold mb-2 dark:text-white">Quick Links</h3>
-          <ul className="space-y-1">
-            <li><a href="#home" className="hover:underline text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Home</a></li>
-            <li><a href="#about" className="hover:underline text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">About Me</a></li>
-            <li><a href="#skills" className="hover:underline text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Skills</a></li>
-            <li><a href="#projects" className="hover:underline text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Projects</a></li>
-            <li><a href="#contact" className="hover:underline text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        {/* Contact Info */}
-        <div>
-          <h3 className="font-semibold mb-2 dark:text-white">Contact Info</h3>
-          <ul className="space-y-1 text-slate-700 dark:text-slate-300">
-            <li>Email: elgendyo240@email.com</li>
-            <li>Phone: +20 01202665670</li>
-            <li>Location: Elbehira, Egypt</li>
-          </ul>
-        </div>
-        {/* Social Media */}
-        <div>
-          <h3 className="font-semibold mb-2 dark:text-white">Follow Me</h3>
-          <div className="flex flex-col space-y-2">
-            <a href="https://facebook.com/share/1A3jrR5dwM/" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" className="w-5 h-5" />
-              <span>Facebook</span>
+    <footer className="pt-20 pb-10 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <div className="maxWidth px-[5%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand/Description */}
+          <div className="flex flex-col gap-4">
+            <a href="#home" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-500 w-fit">
+              Osama<span className="text-blue-500">.</span>
             </a>
-            <a href="https://wa.me/201202665670" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" className="w-5 h-5" />
-              <span>WhatsApp</span>
-            </a>
-            <a href="https://github.com/osama816" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" className="w-5 h-5" />
-              <span>GitHub</span>
-            </a>
-            <a href="https://www.linkedin.com/in/osama-elgendy-416329331/" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" className="w-5 h-5" />
-              <span>LinkedIn</span>
-            </a>
+            <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-xs">
+              A passionate Software Engineer dedicated to crafting modern web solutions with precision and purpose.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">Navigation</h4>
+            <ul className="flex flex-col gap-2">
+              {footerLinks.map((link, index) => (
+                <li key={index}>
+                  <a href={link.href} className="text-sm text-slate-500 dark:text-slate-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">Contact Information</h4>
+            <ul className="flex flex-col gap-3">
+              <li className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                <i className="fa-solid fa-envelope text-blue-500"></i>
+                <span>elgendyo240@gmail.com</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                <i className="fa-solid fa-phone text-blue-500"></i>
+                <span>+20 120 266 5670</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
+                <i className="fa-solid fa-location-dot text-blue-500"></i>
+                <span>Elbehira, Egypt</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Socials */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">Follow The Journey</h4>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:-translate-y-1 transition-all duration-300"
+                  style={{ '--hover-color': social.color }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = social.color;
+                    e.currentTarget.style.color = 'white';
+                    e.currentTarget.style.borderColor = 'transparent';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '';
+                    e.currentTarget.style.color = '';
+                    e.currentTarget.style.borderColor = '';
+                  }}
+                >
+                  <i className={`${social.icon} text-base`}></i>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="text-center text-xs mt-8 text-slate-600 dark:text-slate-400">
-        &copy; {new Date().getFullYear()} All Rights Reserved | Designed by Osama Elgendy
+
+        <div className="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-slate-500 dark:text-slate-500 font-medium">
+            &copy; {currentYear} All Rights Reserved • Osama Elgendy
+          </p>
+          <div className="flex gap-6">
+            <span className="text-xs text-slate-400 dark:text-slate-600 italic">Built with React & Tailwind</span>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -1,12 +1,13 @@
 
 const Cards = ({ imageUrl, title }) => {
   return (
-    <div className="card !px-4 !py-5  transition hover:scale-105 ">
-      <img src={imageUrl} alt="" className="cardImage" />
-      <div className="flex flex-col items-start gap-1">
-        <h2 className="text-left text-[24px] font-medium text-slate-800 dark:text-slate-200">
-          {title}
-        </h2>
+    <div className="skill-card group">
+      <div className="skill-card-glow"></div>
+      <div className="skill-card-content">
+        <div className="skill-icon-wrapper">
+          <img src={imageUrl} alt={title} className="skill-icon" />
+        </div>
+        <h3 className="skill-title">{title}</h3>
       </div>
     </div>
   );

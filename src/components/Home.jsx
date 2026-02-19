@@ -7,31 +7,53 @@ function Home() {
   const history = useNavigate();
 
   const navigate = (url) => {
-    history(url);
+    if (url.startsWith("#")) {
+      const element = document.getElementById(url.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      history(url);
+    }
   };
+
+  const socialLinks = [
+    { icon: "fa-brands fa-facebook", url: "https://www.facebook.com/share/1A3jrR5dwM/", color: "#1877F2" },
+    { icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/osama-elgendy-416329331/", color: "#0A66C2" },
+    { icon: "fa-brands fa-whatsapp", url: "https://wa.me/201202665670", color: "#25D366" },
+    { icon: "fa-brands fa-github", url: "https://github.com/osama816", color: "#333" },
+  ];
 
   return (
     <div
       id="home"
-      className="px-[5%] pt-24 pb-4 hero grid md:grid-cols-2 justify-center items-center gap-8 sm:gap-0 maxWidth bg-white text-slate-900 dark:bg-black dark:text-white"
+      className="px-[5%] pt-32 pb-20 hero flex flex-col md:flex-row items-center justify-between gap-12 maxWidth bg-white dark:bg-black relative overflow-hidden"
     >
-      <img
-        src="https://tailwindui.com/img/beams-basic.png"
-        alt=""
-        className="w-full h-[100vh] absolute top-0 left-0 right-0 overflow-hidden -z-10"
-      />
-      <div className="flex justify-start flex-col order-1 md:order-0 relative ">
-        <span className="mb-3 pb-3 text-[25px] text-slate-800 dark:text-blue-200">
-          Hello' 👋 <br />
+      <div className="absolute top-0 right-0 -z-10 opacity-20 dark:opacity-30">
+        <svg width="600" height="600" viewBox="0 0 600 600" fill="none">
+          <circle cx="400" cy="200" r="200" fill="url(#paint0_radial)" />
+          <defs>
+            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 200) rotate(90) scale(200)">
+              <stop stopColor="#3B82F6" />
+              <stop offset="1" stopColor="#3B82F6" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="flex-1 flex flex-col items-start gap-4 z-10 text-center md:text-left">
+        <span className="px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-sm font-bold tracking-wider uppercase border border-blue-100 dark:border-blue-800 self-center md:self-start mb-2">
+          Hello there, 👋
         </span>
-        <h1 className="text-3xl leading-12 mb-2 flex gap-2">
-          <span className="headingText">I&apos;m</span>
-          <span className="headingText text-blue-600 dark:text-sky-400">
+        
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight">
+          I'm <span className="text-blue-600 dark:text-blue-400">
             <Typewriter
               options={{
                 strings: [
                   "Osama Elgendy",
                   "Full Stack Developer",
+                  "Software Engineer",
                 ],
                 autoStart: true,
                 loop: true,
@@ -39,86 +61,67 @@ function Home() {
             />
           </span>
         </h1>
-        <p className="text-[18px] text-slate-800 mt-3 dark:text-white">
-          I&apos;m a passionate software engineer with a strong background in
-          web development and a keen interest in creating innovative and
-          user-friendly solutions.
+        
+        <p className="text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed mt-2">
+          Specializing in building robust and scalable web applications from architectural design to interactive user experiences. Let's build something amazing together.
         </p>
 
-        <div className="flex justify-center md:justify-start items-center gap-4 mt-4">
-          <a href="https://www.facebook.com/share/1A3jrR5dwM/" target="_blank">
-            <button className="social-btn bg-sky-500 border hover:bg-white hover:text-sky-500 borderN">
-              <i className="fa-brands fa-facebook  text-xl">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-              </i>
-            </button>
-          </a>
-          <a href="https://wa.me/201202665670" target="_blank">
-            {" "}
-            <button className="social-btn bg-sky-500 border hover:bg-white hover:text-sky-500 borderN">
-              <i className="fa-brands fa-whatsapp text-xl">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-              </i>
-            </button>
-          </a>
-
-          <a href="https://github.com/osama816" target="_blank">
-            <button className="social-btn bg-sky-500 border hover:bg-white hover:text-sky-500 borderN">
-              <i className="fa-brands fa-github text-xl">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-              </i>
-            </button>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/osama-elgendy-416329331/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apps"
-            target="_blank"
-          >
-            <button className="social-btn bg-sky-500 border hover:bg-white hover:text-sky-500 borderN">
-              <i className="fa-brands fa-linkedin text-xl">
-                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-              </i>
-            </button>
-          </a>
-        </div>
-
-        <div className="flex gap-4 mt-4 mx-auto md:mx-0">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-6">
           <button
             onClick={() => navigate("#contact")}
-            className="btn w-[140px] flex flex-row justify-center items-center gap-2 disabled"
+            className="group relative flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl overflow-hidden transition-all hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-500/20 active:scale-95"
           >
-            <FaToolbox /> <p>Contact Me</p>
+             <FaToolbox className="text-lg group-hover:rotate-12 transition-transform" /> 
+             <span>Hire Me Now</span>
           </button>
-          {/* <div className="flex gap-2 sm:gap-3 items-center">
-            <a href="#contact">
-              <button className="btn !py-[6px]">Contact Me</button>
-            </a>
-
-            <DarkModeToggle />
-            <button onClick={() => setNav(true)} className="btn-auto">
-              <i className="mx-auto fa-solid fa-bars-staggered"></i>
-            </button>
-          </div> */}
+          
           <button
-            className="btn-outline w-[140px] disabled"
-            onClick={() => {
-              window.location.href =
-                "https://drive.google.com/drive/folders/1hLOcMJzoxmcPvf7v6xOgi6PnhM3NY7IU?usp=sharing";
-            }}
+            className="group flex items-center gap-3 px-8 py-4 bg-white dark:bg-slate-800 text-slate-700 dark:text-gray-200 font-bold rounded-2xl border-2 border-slate-200 dark:border-slate-700 transition-all hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 active:scale-95"
+            onClick={() => window.open("https://drive.google.com/drive/folders/1hLOcMJzoxmcPvf7v6xOgi6PnhM3NY7IU?usp=sharing")}
           >
-            <i className="fa-regular fa-file-lines mr-2"></i>Download CV
+            <i className="fa-regular fa-file-lines text-lg group-hover:bounce" />
+            <span>View CV</span>
           </button>
+        </div>
+
+        <div className="flex items-center gap-4 mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 w-full md:w-fit justify-center">
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest hidden sm:block">Connect:</span>
+          <div className="flex gap-3">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-social-btn !w-11 !h-11 shadow-sm"
+                style={{ '--social-color': social.color }}
+              >
+                <i className={`${social.icon} text-lg`}></i>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="grid col-span-1 justify-center md:justify-end relative order-0 md:order-1 my-8 md:mb-0">
-        <img
-          src={prfileImage}
-          alt=""
-          className="rounded-full w-[300px] h-[300px] md:w-[380px] md:h-[380px] md:my-0 shadow-sky-200 dark:shadow-md dark:shadow-sky-400"
-        />
+      <div className="flex-1 flex justify-center lg:justify-end z-10 relative">
+        <div className="relative group">
+          {/* Animated decorative ring */}
+          <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500 to-sky-400 rounded-full opacity-20 group-hover:opacity-40 blur-2xl transition-opacity animate-pulse"></div>
+          
+          <img
+            src={prfileImage}
+            alt="Osama Elgendy"
+            className="relative z-10 rounded-full w-[300px] h-[300px] md:w-[380px] md:h-[380px] object-cover border-8 border-white dark:border-slate-900 shadow-2xl animate-float"
+          />
+          
+          <div className="absolute bottom-6 -right-2 z-20 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 animate-bounce cursor-default">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-bold dark:text-white">Available for Work</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="absolute"></div>
     </div>
   );
 }

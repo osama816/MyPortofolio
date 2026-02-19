@@ -8,183 +8,126 @@ import blog_laravel from "../assets/blog_laravel.png";
 import frontend_E_commerce from "../assets/frontend_E-commerce.png";
 import mealmain from "../assets/mealmain.png";
 
-
 function Projects() {
   const projects = [
-    { 
-      title: "Booking Courses ",
+    {
+      title: "Booking Courses",
       imageUrl: courses,
-      category: "fullstack",
-      tags: ["Laravel", "Livewire", "Payment","real time","HTML", "css", "Api","tailwind", "MySQL"],
+      tags: ["Laravel", "Livewire", "Payment", "Real Time", "API", "Tailwind", "MySQL"],
       previewLink: "https://courseway.wuaze.com/",
       githubLink: "https://github.com/osama816/Courses_laravel.git",
     },
-    { 
-      title: " MealMain ",
+    {
+      title: "MealMain",
       imageUrl: mealmain,
-      category: "backend",
-      tags: [ "taliwind","HTML", "css", "js"],
+      tags: ["Tailwind", "HTML", "CSS", "JS"],
       previewLink: "https://mealsmind.vercel.app",
       githubLink: "https://github.com/osama816/mealmain.git",
     },
-    
     {
-      title: "blog & ecommerce website",
-      imageUrl:ecommersImage,
-      category: "fullstack",
-      tags: ["HTML", "opp",'php', "css", "bootstrap", "MySQL"],
+      title: "Blog & Ecommerce",
+      imageUrl: ecommersImage,
+      tags: ["HTML", "OOP", "PHP", "CSS", "Bootstrap", "MySQL"],
       previewLink: "https://electroworld.kesug.com/index.php?page=home&i=1",
       githubLink: "https://github.com/elkhokh/E-Commerce-Electronics.git",
     },
-    
-        {
-      title: "frontend_E-commerce",
-      imageUrl:frontend_E_commerce,
-      category: "frontend",
-      tags: ["HTML5", "Tailwind", "JavaScript", "pdf.js", "css"],
+    {
+      title: "Frontend E-Commerce",
+      imageUrl: frontend_E_commerce,
+      tags: ["HTML5", "Tailwind", "JavaScript", "CSS"],
       previewLink: "https://shopco-shop.vercel.app",
       githubLink: "https://github.com/osama816/ecommerse_frontend.git",
     },
-    { 
-      title: " Blog_laravel ",
+    {
+      title: "Blog Laravel",
       imageUrl: blog_laravel,
-      category: "backend",
-      tags: ["Laravel", "Livewire", "taliwind","HTML", "css", "Api", "MySQL"],
+      tags: ["Laravel", "Livewire", "Tailwind", "API", "MySQL"],
       previewLink: "",
       githubLink: "https://github.com/osama816/Blog_Laravel.git",
-    },{ 
-      title: "BLOg App&php native ",
+    },
+    {
+      title: "Blog App (PHP Native)",
       imageUrl: blogImage,
-      category: "fullstack",
-      tags: ["HTML", "css", "php","bootstrap", "MySQL"],
+      tags: ["HTML", "CSS", "PHP", "Bootstrap", "MySQL"],
       previewLink: "https://blog0.wuaze.com",
       githubLink: "https://github.com/osama816/blog_app.git",
     },
-        {
-      title: "Shop stor- php native ",
+    {
+      title: "Shop Store (PHP Native)",
       imageUrl: pmsImage,
-      category: "client",
-      tags: ["HTML", "css", "php","bootstrap", "file.json"],
+      tags: ["HTML", "CSS", "PHP", "Bootstrap", "JSON"],
       previewLink: "https://pmsstore.wuaze.com/index.php?i=3",
       githubLink: "https://github.com/osama816/pms_store.php.git",
     },
     {
-      title: "Eladb-Rentals",
-      imageUrl:rentsImage,
-      category: "client",
-      tags: ["HTML", "Bootstrap", "css", "opp",'php', "MySQL"],
+      title: "Elabd Rentals",
+      imageUrl: rentsImage,
+      tags: ["HTML", "Bootstrap", "CSS", "OOP", "PHP", "MySQL"],
       previewLink: "https://elabd-rentals.wuaze.com/?i=1",
       githubLink: "https://github.com/osama816/eladb-rentals.git",
     },
-
-   
   ];
 
-  const [filter, setFilter] = useState("all");
-
-  const handleFilterChange = (category) => {
-    setFilter(category);
-  };
-
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+  const duplicatedProjects = [...projects, ...projects];
 
   return (
-    <div id="projects" className="px-[5%] maxWidth py-4 hero !h-full bg-white text-slate-900 dark:bg-black dark:text-white">
-      <div className="grid col-span-2 mb-6 py-2">
-        <h1 className="text-3xl leading-12 text-center">
-          <span className="text-[32px] headingText ">My Projects</span>
-        </h1>
-      </div>
-      {/* <div className="mb-5 flex justify-center flex-wrap items-center gap-3">
-        <button
-          className={`btn-outline transition ${
-            filter === "all"
-              ? "bg-slate-800 !text-white dark:bg-white dark:border-white dark:!text-slate-900"
-              : ""
-          }`}
-          onClick={() => handleFilterChange("all")}
-        >
-          All
-        </button>
+    <section id="projects" className="py-20 bg-white dark:bg-black overflow-hidden">
+      <div className="maxWidth px-[5%]">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+            My <span className="text-blue-500">Projects</span>
+          </h2>
+          <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm">
+            Hover to pause • Click buttons to explore
+          </p>
+        </div>
 
-        <button
-          className={`btn-outline transition ${
-            filter === "fullstack"
-              ? "bg-slate-800 !text-white dark:bg-white dark:border-white dark:!text-slate-900"
-              : ""
-          }`}
-          onClick={() => handleFilterChange("fullstack")}
-        >
-          FullStack
-        </button>
-        <button
-          className={`btn-outline transition ${
-            filter === "client"
-              ? "bg-slate-800 !text-white dark:bg-white dark:border-white dark:!text-slate-900"
-              : ""
-          }`}
-          onClick={() => handleFilterChange("client")}
-        >
-          Client
-        </button>
-        <button
-          className={`btn-outline transition ${
-            filter === "ui"
-              ? "bg-slate-800 !text-white dark:bg-white dark:border-white dark:!text-slate-900"
-              : ""
-          }`}
-          onClick={() => handleFilterChange("ui")}
-        >
-          UI Design
-        </button>
-      </div> */}
-      <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-5 sm:gap-5 md:gap-7 lg:gap-7">
-        {filteredProjects.map((project, index) => (
-          <div key={index} className="project">
-            <img
-              src={project.imageUrl}
-              alt=""
-              className="w-full rounded-tr-md lg:max-h-[290px]  md:max-w-[310px] lg:max-w-[330px]"
-            />
-            <div className="flex flex-col px-3 py-2 mb-2">
-              <h2 className="text-xl font-medium text-slate-800 dark:text-slate-100">
-                {project.title}
-              </h2>
-              <div className="flex gap-2 justify-start items-center flex-wrap mt-2 mb-12">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="tags bg-slate-700 text-white">
-                    {tag}
-                  </span>
-                ))}
+        {/* Marquee Strip */}
+        <div className="relative flex overflow-x-hidden group">
+          <div className="flex animate-marquee-projects whitespace-nowrap py-6">
+            {duplicatedProjects.map((project, index) => (
+              <div key={index} className="project-marquee-card">
+                <div className="project-card-image-wrapper">
+                  <img src={project.imageUrl} alt={project.title} />
+                  <div className="project-card-image-overlay"></div>
+                </div>
+                <div className="project-card-body">
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <div className="project-card-tags">
+                    {project.tags.slice(0, 5).map((tag, tagIndex) => (
+                      <span key={tagIndex} className="project-card-tag">
+                        {tag}
+                      </span>
+                    ))}
+                    {project.tags.length > 5 && (
+                      <span className="project-card-tag">+{project.tags.length - 5}</span>
+                    )}
+                  </div>
+                  <div className="project-card-actions">
+                    {project.previewLink && (
+                      <button
+                        className="project-card-btn preview"
+                        onClick={() => window.open(project.previewLink)}
+                      >
+                        <i className="fa-solid fa-up-right-from-square"></i>
+                        Preview
+                      </button>
+                    )}
+                    <button
+                      className="project-card-btn github"
+                      onClick={() => window.open(project.githubLink)}
+                    >
+                      <i className="fa-brands fa-github"></i>
+                      Github
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="flex gap-4 lg:gap-1 justify-center items-center flex-wrap absolute bottom-2 left-0 right-0 lg:relative xl:right-10">
-                <button
-                  className="btn !rounded-full"
-                  onClick={() => window.open(project.previewLink)}
-                >
-                  <i className="fa-solid fa-up-right-from-square icon"></i>
-                  Preview
-                </button>
-                <button
-                  className="btn !rounded-full"
-                  onClick={() => window.open(project.githubLink)}
-                >
-                  <i className="fa-brands fa-github icon"></i>Github
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
-        {filteredProjects.length == 0 && (
-          <div className="mx-auto mt-5 col-span-full">
-            <h3 className="text-xl">No Projects Available</h3>
-          </div>
-        )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

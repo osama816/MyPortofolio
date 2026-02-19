@@ -70,7 +70,7 @@ function Skills() {
     },
     {
       imageUrl:
-        "https://miro.medium.com/v2/resize:fit:720/format:webp/1*UBZYjKJigowCJOK4SaHicw.jpeg",
+        "https://images.icon-icons.com/2429/PNG/512/figma_logo_icon_147289.png",
       title: "Figma",
       category: "web",
     },

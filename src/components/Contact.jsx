@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import toastr from "toastr";
 import "toastr/build/toastr.min.css";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     subject: "",
@@ -9,7 +10,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // State to track loading status
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,123 +19,155 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setLoading(true); // Set loading to true when request starts
+    setLoading(true);
 
     try {
-            await emailjs.send(
-        'service_gs59twz', 
+      await emailjs.send(
+        'service_gs59twz',
         'template_f30vl12',
         formData,
         'Sx4GTNhvPdROttttk'
-      )
-
-      // if (response.status !== 200) {
-      //   toastr.warning(response.data.errors[0], {
-      //     timeOut: 5000, // auto dismiss after 5 seconds
-      //     positionClass: "toast-top-center",
-      //   });
-      // } else {
-        toastr.success("Email sent successfully", {
-          timeOut: 5000, // auto dismiss after 5 seconds
-          positionClass: "toast-top-center",
-        });
-        setFormData({ subject: "", email: "", message: "" });
-      //}
+      );
+      toastr.success("Email sent successfully", {
+        timeOut: 5000,
+        positionClass: "toast-top-center",
+      });
+      setFormData({ subject: "", email: "", message: "" });
     } catch (error) {
       toastr.error("Oops! Something went wrong", {
-        timeOut: 5000, // auto dismiss after 5 seconds
+        timeOut: 5000,
         positionClass: "toast-top-center",
       });
     } finally {
-      setLoading(false); // Set loading to false when request completes
+      setLoading(false);
     }
   };
 
-  const redirectClient = (url) => {
-    window.open(url, "_blank");
-  };
+  const socialLinks = [
+    { icon: "fa-brands fa-facebook", url: "https://www.facebook.com/share/1A3jrR5dwM/", color: "#1877F2", label: "Facebook" },
+    { icon: "fa-brands fa-linkedin", url: "https://www.linkedin.com/in/osama-elgendy-416329331/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apps", color: "#0A66C2", label: "LinkedIn" },
+    { icon: "fa-brands fa-whatsapp", url: "https://wa.me/201202665670", color: "#25D366", label: "WhatsApp" },
+    { icon: "fa-brands fa-github", url: "https://github.com/osama816", color: "#333", label: "GitHub" },
+  ];
 
   return (
-    <div id="contact" className="px-[5%] maxWidth py-4 hero !h-full bg-white text-slate-900 dark:bg-black dark:text-white ">
-      <div className="grid col-span-2 mb-6 py-2">
-        <h1 className="text-3xl leading-12 text-center">
-          <span className="text-[32px] headingText">Contact Me</span>
-        </h1>
-      </div>
-      <img
-        src="https://tailwindui.com/img/beams-basic.png"
-        alt=""
-        className="w-full h-screen absolute top-0 left-0 right-0 overflow-hidden -z-10"
-      />
-      <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-8">
-        <div className="w-[98%] xs:w-[90%] sm:w-[520px] mx-auto mt-3 order-2 sm:order-1">
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-4 px-6 py-8 ssdow rounded-md border border-gray-300"
-          >
-            <div className="flex flex-col">
-              <label
-                htmlFor="email"
-                className="text-[15px] font-medium text-slate-700 dark:text-slate-100"
-              >
-                Enter Your Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                value={formData.email}
-                onChange={handleChange}
-                className="px-3 py-2 mt-1 border border-slate-300 dark:bg-transparent rounded-sm focus:outline-blue-400"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label
-                htmlFor="subject"
-                className="text-[15px] font-medium text-slate-700 dark:text-slate-100"
-              >
-                Email subject
-              </label>
-              <input
-                type="text"
-                name="subject"
-                placeholder="Email subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="px-3 py-2 mt-1 border border-slate-300 dark:bg-transparent rounded-sm focus:outline-blue-400"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label
-                htmlFor="message"
-                className="text-[15px] font-medium text-slate-700 dark:text-slate-100"
-              >
-                Your message
-              </label>
-              <textarea
-                name="message"
-                placeholder="Your message"
-                value={formData.message}
-                onChange={handleChange}
-                className="px-3 py-2 mt-1 border h-[200px] dark:bg-transparent border-slate-300 rounded-sm focus:outline-blue-400 wid"
-              ></textarea>
+    <section id="contact" className="py-20 bg-white dark:bg-black overflow-hidden">
+      <div className="maxWidth px-[5%]">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+            Get In <span className="text-blue-500">Touch</span>
+          </h2>
+          <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm max-w-lg mx-auto">
+            Seeking assistance with your project? As a dedicated developer, I offer comprehensive services. Feel free to reach out!
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-10 items-stretch">
+          {/* Contact Info Side */}
+          <div className="flex-1 flex flex-col gap-6">
+            {/* Info Cards */}
+            <div className="contact-info-card">
+              <div className="contact-info-icon">
+                <i className="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</h4>
+                <p className="text-slate-800 dark:text-white font-medium mt-1">elgendyo240@gmail.com</p>
+              </div>
             </div>
 
-            <button
-              type="submit"
-              className="btn text-center"
-              disabled={loading}
-            >
-              {loading ? (
-                <div className="text-center">
-                  <div role="status">
+            <div className="contact-info-card">
+              <div className="contact-info-icon">
+                <i className="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone</h4>
+                <p className="text-slate-800 dark:text-white font-medium mt-1">+20 120 266 5670</p>
+              </div>
+            </div>
+
+            <div className="contact-info-card">
+              <div className="contact-info-icon">
+                <i className="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Location</h4>
+                <p className="text-slate-800 dark:text-white font-medium mt-1">Egypt</p>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="mt-2">
+              <h4 className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">Follow Me</h4>
+              <div className="flex gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-social-btn"
+                    style={{ '--social-color': social.color }}
+                    title={social.label}
+                  >
+                    <i className={`${social.icon} text-lg`}></i>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form Side */}
+          <div className="flex-1">
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="flex flex-col">
+                <label htmlFor="email" className="contact-label">Enter Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="contact-input"
+                  required
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="subject" className="contact-label">Email Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="What's this about?"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="contact-input"
+                  required
+                />
+              </div>
+              <div className="flex flex-col">
+                <label htmlFor="message" className="contact-label">Your Message</label>
+                <textarea
+                  name="message"
+                  placeholder="Tell me about your project..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="contact-input !h-[180px] resize-none"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="contact-submit-btn"
+                disabled={loading}
+              >
+                {loading ? (
+                  <div className="flex items-center justify-center gap-2">
                     <svg
                       aria-hidden="true"
-                      className="inline w-6 h-6 text-gray-200 animate-spin dark:text-slate-100 fill-blue-600"
+                      className="w-5 h-5 animate-spin text-white/50 fill-white"
                       viewBox="0 0 100 101"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
                         d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
@@ -145,57 +178,20 @@ const Contact = () => {
                         fill="currentFill"
                       />
                     </svg>
-                    <span className="sr-only">Loading...</span>
+                    <span>Sending...</span>
                   </div>
-                </div>
-              ) : (
-                "Submit"
-              )}
-            </button>
-          </form>
-        </div>
-
-        <div className="w-[90%] xs:w-[80%] md:max-w-[500px] px-1 sm:px-3 mx-auto my-6 order-1 sm:order-2">
-          <h2 className="text-xl text-start font-medium text-slate-800 dark:text-slate-100">
-            Seeking assistance with your project? As a dedicated and proficient
-            developer, I offer comprehensive services including project
-            completion, task execution, and optimization. Feel free to reach out
-            to me for any of your needs.
-          </h2>
-
-          <div className="flex justify-center gap-4 mt-5 md:mt-7 lg:mt-10">
-            <button
-              onClick={() =>
-                redirectClient("https://www.facebook.com/share/1A3jrR5dwM/")
-              }
-              className="social-btn bg-blue-500 border hover:bg-white hover:text-blue-500 borderN"
-            >
-              <i className="fa-brands fa-facebook text-xl"></i>
-            </button>
-            <button
-              onClick={() =>
-                redirectClient("https://www.linkedin.com/in/osama-elgendy-416329331/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_apps")
-              }
-              className="social-btn bg-sky-500 border hover:bg-white hover:text-sky-500 borderN"
-            >
-              <i className="fa-brands fa-linkedin text-xl"></i>
-            </button>
-            <button
-              onClick={() => redirectClient("https://wa.me/201202665670")}
-              className="social-btn bg-green-600 border hover:bg-white hover:text-green-500 borderN"
-            >
-              <i className="fa-brands fa-whatsapp text-xl"></i>
-            </button>
-            <button
-              onClick={() => redirectClient("https://github.com/osama816")}
-              className="social-btn bg-slate-700 border hover:bg-white hover:text-slate-500 borderN"
-            >
-              <i className="fa-brands fa-github text-xl"></i>
-            </button>
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    <i className="fa-solid fa-paper-plane"></i>
+                    Send Message
+                  </span>
+                )}
+              </button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
