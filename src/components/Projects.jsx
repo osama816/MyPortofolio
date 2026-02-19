@@ -14,17 +14,17 @@ function Projects() {
       title: "Booking Courses ",
       imageUrl: courses,
       category: "fullstack",
-      tags: ["Laravel", "Livewire", "Payment","real time","HTML", "css", "Api","bootstrap", "MySQL"],
-      previewLink: "",
+      tags: ["Laravel", "Livewire", "Payment","real time","HTML", "css", "Api","tailwind", "MySQL"],
+      previewLink: "https://courseway.wuaze.com/",
       githubLink: "https://github.com/osama816/Courses_laravel.git",
     },
     { 
-      title: " Blog_laravel ",
-      imageUrl: blog_laravel,
+      title: " MealMain ",
+      imageUrl: mealmain,
       category: "backend",
-      tags: ["Laravel", "Livewire", "taliwind","HTML", "css", "Api", "MySQL"],
-      previewLink: "",
-      githubLink: "https://github.com/osama816/Blog_Laravel.git",
+      tags: [ "taliwind","HTML", "css", "js"],
+      previewLink: "https://mealsmind.vercel.app",
+      githubLink: "https://github.com/osama816/mealmain.git",
     },
     
     {
@@ -35,6 +35,7 @@ function Projects() {
       previewLink: "https://electroworld.kesug.com/index.php?page=home&i=1",
       githubLink: "https://github.com/elkhokh/E-Commerce-Electronics.git",
     },
+    
         {
       title: "frontend_E-commerce",
       imageUrl:frontend_E_commerce,
@@ -42,6 +43,14 @@ function Projects() {
       tags: ["HTML5", "Tailwind", "JavaScript", "pdf.js", "css"],
       previewLink: "https://shopco-shop.vercel.app",
       githubLink: "https://github.com/osama816/ecommerse_frontend.git",
+    },
+    { 
+      title: " Blog_laravel ",
+      imageUrl: blog_laravel,
+      category: "backend",
+      tags: ["Laravel", "Livewire", "taliwind","HTML", "css", "Api", "MySQL"],
+      previewLink: "",
+      githubLink: "https://github.com/osama816/Blog_Laravel.git",
     },{ 
       title: "BLOg App&php native ",
       imageUrl: blogImage,
