@@ -6,6 +6,7 @@ import rentsImage from "../assets/rants.png";
 import courses from "../assets/courses.png";
 import blog_laravel from "../assets/blog_laravel.png";
 import frontend_E_commerce from "../assets/frontend_E-commerce.png";
+import mealmain from "../assets/mealmain.png";
 
 
 function Projects() {
