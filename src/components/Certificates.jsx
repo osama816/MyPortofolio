@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import backend from '../assets/php.png';
+import IBM from  '../assets/IBM.jpg';
+import database from '../assets/database.jpg';
 
 const certificates = [
   { id: 1, name: 'Backend php', image: backend },
+  { id: 2, name: 'IBM', image: IBM },
+  { id: 3, name: 'database', image: database },
 ];
 
 const Certificates = () => {
