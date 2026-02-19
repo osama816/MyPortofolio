@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Cards from "./Cards"; // Import your Cards component here
+import livewire from "../assets/livewire.png";
 
 function Skills() {
   const skills = [
@@ -74,7 +75,7 @@ function Skills() {
       category: "web",
     },
     {
-      imageUrl: "https://logo.svgcdn.com/devicon/livewire-original-wordmark.png",
+      imageUrl: livewire,
       title: "Livewire",
       category: "web",
     },

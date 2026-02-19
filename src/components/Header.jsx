@@ -41,6 +41,14 @@ function Header() {
               Projects
             </a>
           </li>
+          <li>
+            <a
+              href="#certificates"
+              className="px-2 py-[6px] text-gray-700 font-medium dark:text-gray-300 dark:hover:text-white hover:text-slate-900"
+            >
+              Certificates
+            </a>
+          </li>
         </ul>
 
         {nav && (
@@ -76,6 +84,15 @@ function Header() {
                 className="px-2 py-[6px] text-xl text-left hover:text-slate-700 dark:text-gray-200 font-medium dark:hover:text-slate-300"
               >
                 Projects
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => setNav(false)}
+                href="#certificates"
+                className="px-2 py-[6px] text-xl text-left hover:text-slate-700 dark:text-gray-200 font-medium dark:hover:text-slate-300"
+              >
+                Certificates
               </a>
             </li>
           </ul>

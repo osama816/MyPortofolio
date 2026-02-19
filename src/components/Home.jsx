@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import prfileImage from "../assets/profile.png";
 import { FaToolbox } from "react-icons/fa6";
+import Typewriter from "typewriter-effect";
 
 function Home() {
   const history = useNavigate();
@@ -24,11 +25,20 @@ function Home() {
           Hello' 👋 <br />
         </span>
         <h1 className="text-3xl leading-12 mb-2 flex gap-2">
-          <span className="headingText">I&apos;m Osama Elgendy</span>
+          <span className="headingText">I&apos;m</span>
+          <span className="headingText text-blue-600 dark:text-sky-400">
+            <Typewriter
+              options={{
+                strings: [
+                  "Osama Elgendy",
+                  "Full Stack Developer",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </span>
         </h1>
-        <p className="text-[18px] text-slate-800 mt-3 dark:text-white">
-          I Am software engineer
-        </p>
         <p className="text-[18px] text-slate-800 mt-3 dark:text-white">
           I&apos;m a passionate software engineer with a strong background in
           web development and a keen interest in creating innovative and
