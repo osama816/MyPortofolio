@@ -45,9 +45,9 @@ function Home() {
         <span className="px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-sm font-bold tracking-wider uppercase border border-blue-100 dark:border-blue-800 self-center md:self-start mb-2">
           Hello there, 👋
         </span>
-        
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight"> I'm</h1>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight">
-          I'm <span className="text-blue-600 dark:text-blue-400">
+          <span className="text-blue-600 dark:text-blue-400">
             <Typewriter
               options={{
                 strings: [
