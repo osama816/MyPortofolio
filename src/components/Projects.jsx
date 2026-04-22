@@ -1,4 +1,13 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import pmsImage from "../assets/pms.png";
 import blogImage from "../assets/blog.png";
 import ecommersImage from "../assets/ecommers.png";
@@ -68,8 +77,6 @@ function Projects() {
     },
   ];
 
-  const duplicatedProjects = [...projects, ...projects];
-
   return (
     <section id="projects" className="py-20 bg-white dark:bg-black overflow-hidden">
       <div className="maxWidth px-[5%]">
@@ -78,53 +85,79 @@ function Projects() {
             My <span className="text-blue-500">Projects</span>
           </h2>
           <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm">
-            Hover to pause • Click buttons to explore
+            Swipe to explore • Click buttons to view details
           </p>
         </div>
 
-        {/* Marquee Strip */}
-        <div className="relative flex overflow-x-hidden group">
-          <div className="flex animate-marquee-projects whitespace-nowrap py-6">
-            {duplicatedProjects.map((project, index) => (
-              <div key={index} className="project-marquee-card">
-                <div className="project-card-image-wrapper">
-                  <img src={project.imageUrl} alt={project.title} />
-                  <div className="project-card-image-overlay"></div>
-                </div>
-                <div className="project-card-body">
-                  <h3 className="project-card-title">{project.title}</h3>
-                  <div className="project-card-tags">
-                    {project.tags.slice(0, 5).map((tag, tagIndex) => (
-                      <span key={tagIndex} className="project-card-tag">
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 5 && (
-                      <span className="project-card-tag">+{project.tags.length - 5}</span>
-                    )}
+        {/* Swiper Carousel */}
+        <div className="relative group px-4 md:px-12">
+          {/* Custom Navigation Buttons */}
+          <button className="projects-prev-btn swiper-button-prev !left-2 md:!left-0 !hidden md:!flex items-center justify-center">
+            <HiChevronLeft className="text-2xl" />
+          </button>
+          <button className="projects-next-btn swiper-button-next !right-2 md:!right-0 !hidden md:!flex items-center justify-center">
+            <HiChevronRight className="text-2xl" />
+          </button>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={{
+              nextEl: ".projects-next-btn",
+              prevEl: ".projects-prev-btn",
+            }}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="pb-16"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <div className="project-marquee-card !mx-0 !w-full">
+                  <div className="project-card-image-wrapper">
+                    <img src={project.imageUrl} alt={project.title} />
+                    <div className="project-card-image-overlay"></div>
                   </div>
-                  <div className="project-card-actions">
-                    {project.previewLink && (
+                  <div className="project-card-body">
+                    <h3 className="project-card-title">{project.title}</h3>
+                    <div className="project-card-tags">
+                      {project.tags.slice(0, 5).map((tag, tagIndex) => (
+                        <span key={tagIndex} className="project-card-tag">
+                          {tag}
+                        </span>
+                      ))}
+                      {project.tags.length > 5 && (
+                        <span className="project-card-tag">+{project.tags.length - 5}</span>
+                      )}
+                    </div>
+                    <div className="project-card-actions">
+                      {project.previewLink && (
+                        <button
+                          className="project-card-btn preview"
+                          onClick={() => window.open(project.previewLink)}
+                        >
+                          <i className="fa-solid fa-up-right-from-square"></i>
+                          Preview
+                        </button>
+                      )}
                       <button
-                        className="project-card-btn preview"
-                        onClick={() => window.open(project.previewLink)}
+                        className="project-card-btn github"
+                        onClick={() => window.open(project.githubLink)}
                       >
-                        <i className="fa-solid fa-up-right-from-square"></i>
-                        Preview
+                        <i className="fa-brands fa-github"></i>
+                        Github
                       </button>
-                    )}
-                    <button
-                      className="project-card-btn github"
-                      onClick={() => window.open(project.githubLink)}
-                    >
-                      <i className="fa-brands fa-github"></i>
-                      Github
-                    </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </div>
     </section>
