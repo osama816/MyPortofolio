@@ -12,12 +12,14 @@ import backend from '../assets/php.png';
 import IBM from  '../assets/IBM.jpg';
 import database from '../assets/database.jpg';
 import NTI from '../assets/NTI.jpg';
+import aws from '../assets/aws.png';
 
 const certificates = [
-  { id: 1, name: 'Backend php', image: backend },
-  { id: 2, name: 'IBM', image: IBM },
-  { id: 3, name: 'database', image: database },
-  { id: 4, name: 'NTI Certificate', image: NTI },
+  { id: 1, name: 'AWS Certified Cloud Practitioner - Maharat-Tech', image: aws },
+  { id: 2, name: 'NTI Certificate', image: NTI },
+  { id: 3, name: 'Backend php', image: backend },
+  { id: 4, name: 'IBM', image: IBM },
+  { id: 5, name: 'database', image: database },
 ];
 
 const Certificates = () => {
