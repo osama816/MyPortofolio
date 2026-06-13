@@ -13,13 +13,15 @@ import IBM from  '../assets/IBM.jpg';
 import database from '../assets/database.jpg';
 import NTI from '../assets/NTI.jpg';
 import aws from '../assets/aws.png';
+import aws02 from '../assets/AWS02.jpg'
 
 const certificates = [
   { id: 1, name: 'AWS Certified Cloud Practitioner - Maharat-Tech', image: aws },
-  { id: 2, name: 'NTI Certificate', image: NTI },
-  { id: 3, name: 'Backend php', image: backend },
-  { id: 4, name: 'IBM', image: IBM },
-  { id: 5, name: 'database', image: database },
+  { id: 2, name: 'AWS Certified Cloud Practitioner', image: aws02 },
+  { id: 3, name: 'NTI Certificate', image: NTI },
+  { id: 4, name: 'Backend php', image: backend },
+  { id: 5, name: 'IBM', image: IBM },
+  { id: 6, name: 'database', image: database },
 ];
 
 const Certificates = () => {
