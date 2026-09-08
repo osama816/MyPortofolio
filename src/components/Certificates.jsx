@@ -13,15 +13,17 @@ import IBM from  '../assets/IBM.jpg';
 import database from '../assets/database.jpg';
 import NTI from '../assets/NTI.jpg';
 import aws from '../assets/aws.png';
-import aws02 from '../assets/AWS02.jpg'
+import aws02 from '../assets/AWS02.jpg';
+import iti from '../assets/iti.png';
 
 const certificates = [
-  { id: 1, name: 'AWS Certified Cloud Practitioner - Maharat-Tech', image: aws },
-  { id: 2, name: 'AWS Certified Cloud Practitioner', image: aws02 },
-  { id: 3, name: 'NTI Certificate', image: NTI },
-  { id: 4, name: 'Backend php', image: backend },
-  { id: 5, name: 'IBM', image: IBM },
-  { id: 6, name: 'database', image: database },
+  { id: 1, name: 'ITI - Full-Stack Web & GenAI (.NET Track)', image: iti },
+  { id: 2, name: 'AWS Certified Cloud Practitioner - Maharat-Tech', image: aws },
+  { id: 3, name: 'AWS Certified Cloud Practitioner', image: aws02 },
+  { id: 4, name: 'NTI Certificate', image: NTI },
+  { id: 5, name: 'Backend php', image: backend },
+  { id: 6, name: 'IBM', image: IBM },
+  { id: 7, name: 'database', image: database },
 ];
 
 const Certificates = () => {
@@ -107,7 +109,7 @@ const Certificates = () => {
             <img
               src={selectedCert.image}
               alt={selectedCert.name}
-              className="w-full h-auto"
+              className="w-full max-h-[80vh] object-contain mx-auto"
             />
             <div className="p-6 text-center">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">{selectedCert.name}</h3>
